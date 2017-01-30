@@ -27,6 +27,7 @@ std::vector<const char *> settings_dont_save = boost::assign::list_of
         ("RecalboxConfigScript")
         ("LastVersionFile")
         ("VersionMessage")
+        ("HideSystemView")
         ("MusicDirectory");
 
 Settings::Settings() {
@@ -51,6 +52,7 @@ void Settings::setDefaults() {
     mBoolMap["ShowExit"] = true;
     mBoolMap["Windowed"] = false;
     mBoolMap["UseOSK"] = true;
+    mBoolMap["HideSystemView"] = false;
 
 #ifdef _RPI_
 	// don't enable VSync by default on the Pi, since it already
@@ -91,12 +93,12 @@ void Settings::setDefaults() {
     mStringMap["INPUT P4"] = "DEFAULT";
     mStringMap["Overclock"] = "none";
     mStringMap["UpdateCommand"] = "/recalbox/scripts/recalbox-upgrade.sh";
-    mStringMap["UpdateServer"] = "recalbox.com";
+    mStringMap["UpdateServer"] = "archive.recalbox.com";
     mStringMap["VersionFile"] = "/recalbox/recalbox.version";
     mStringMap["SharePartition"] = "/recalbox/share/";
     mStringMap["RecalboxSettingScript"] = "/recalbox/scripts/recalbox-config.sh";
-    mStringMap["LastVersionFile"] = "/recalbox/share/system/update.done";
-    mStringMap["VersionMessage"] = "/recalbox/recalbox.msg";
+    mStringMap["LastChangelog"] = "/recalbox/share/system/recalbox.changelog.done";
+    mStringMap["Changelog"] = "/recalbox/recalbox.changelog";
     mStringMap["MusicDirectory"] = "/recalbox/share/music/";
 
 }
